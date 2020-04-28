@@ -1,5 +1,5 @@
 package chess
-import compat.Platform.EOL
+import java.lang.System.lineSeparator
 import Board._
 import FigureMoves._
 
@@ -215,7 +215,7 @@ final class OngoingGame(
   val lastMove: Move
 ) extends Game {
   override def toString = "Last move: "+color.other+" "+
-    lastMove.from+" to "+lastMove.to+EOL+showBoard(board)
+    lastMove.from+" to "+lastMove.to+lineSeparator+showBoard(board)
 }
 
 /*

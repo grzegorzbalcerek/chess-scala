@@ -1,6 +1,6 @@
 package chess
 
-import compat.Platform.EOL
+import java.lang.System.lineSeparator
 
 object Board {
   type Board = Map[Field,Figure]
@@ -48,8 +48,8 @@ object Board {
   def showBoard(board: Board): String = {
     def rowToString(row: Int) = 1.to(8).map(col=>
       board.get(Field(col,row)).map(_.toString).getOrElse(".")).mkString
-    " abcdefgh" + EOL + 8.to(1,-1).map(row =>
-    row.toString + rowToString(row) + row.toString + EOL).mkString + " abcdefgh"
+    " abcdefgh" + lineSeparator + 8.to(1,-1).map(row =>
+    row.toString + rowToString(row) + row.toString + lineSeparator).mkString + " abcdefgh"
   }
 
   /**
