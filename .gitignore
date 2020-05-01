@@ -2,3 +2,6 @@
 **/*.class
 target/
 lib/
+.idea
+chess-scala.iml
+stale_outputs_checked
