@@ -1,2 +1,4 @@
-*.jar
-chess/*.class
+**/*.jar
+**/*.class
+target/
+lib/
