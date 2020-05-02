@@ -93,28 +93,3 @@ object FigureMoves {
 
 }
 
-/*
-scaladoc chess\*.scala
-scalac chess\*.scala
-scala
-import chess._, FigureMoves._
-rookMoves.map{case (a,b) => (a.take(4).force,b.take(4).force) } // List((LazyList(1, 2, 3, 4),LazyList(0, 0, 0, 0)), (LazyList(-1, -2, -3, -4),LazyList(0, 0, 0, 0)), (LazyList(0, 0, 0, 0),LazyList(1, 2, 3, 4)), (LazyList(0, 0, 0, 0),LazyList(-1, -2, -3, -4)))
-bishopMoves.map{case (a,b) => (a.take(4).force,b.take(4).force) } // List((LazyList(1, 2, 3, 4),LazyList(1, 2, 3, 4)), (LazyList(-1, -2, -3, -4),LazyList(1, 2, 3, 4)), (LazyList(1, 2, 3, 4),LazyList(-1, -2, -3, -4)), (LazyList(-1, -2, -3, -4),LazyList(-1, -2, -3, -4)))
-queenMoves.map{case (a,b) => (a.take(4).force,b.take(4).force) } // List((LazyList(1, 2, 3, 4),LazyList(0, 0, 0, 0)), (LazyList(-1, -2, -3, -4),LazyList(0, 0, 0, 0)), (LazyList(0, 0, 0, 0),LazyList(1, 2, 3, 4)), (LazyList(0, 0, 0, 0),LazyList(-1, -2, -3, -4)), (LazyList(1, 2, 3, 4),LazyList(1, 2, 3, 4)), (LazyList(-1, -2, -3, -4),LazyList(1, 2, 3, 4)), (LazyList(1, 2, 3, 4),LazyList(-1, -2, -3, -4)), (LazyList(-1, -2, -3, -4),LazyList(-1, -2, -3, -4)))
-knightMoves.map{case (a,b) => (a.force,b.force) } // List((LazyList(1),LazyList(2)), (LazyList(2),LazyList(1)), (LazyList(-1),LazyList(2)), (LazyList(2),LazyList(-1)), (LazyList(-1),LazyList(-2)), (LazyList(-2),LazyList(-1)), (LazyList(1),LazyList(-2)), (LazyList(-2),LazyList(1)))
-kingMoves.map{case (a,b) => (a.force,b.force) } // List((LazyList(1),LazyList(0)), (LazyList(-1),LazyList(0)), (LazyList(0),LazyList(1)), (LazyList(0),LazyList(-1)), (LazyList(1),LazyList(1)), (LazyList(-1),LazyList(1)), (LazyList(1),LazyList(-1)), (LazyList(-1),LazyList(-1)))
-chooseFigureMoves(Figure(Pawn,White),Field(4,2),false).map{case (a,b) => (a.take(4).force,b.take(4).force) } // List((LazyList(0, 0, 0, 0),LazyList(1, 2)))
-chooseFigureMoves(Figure(Pawn,White),Field(4,4),false).map{case (a,b) => (a.take(4).force,b.take(4).force) } // List((LazyList(0),LazyList(1)))
-chooseFigureMoves(Figure(Pawn,Black),Field(4,7),false).map{case (a,b) => (a.take(4).force,b.take(4).force) } // List((LazyList(0, 0, 0, 0),LazyList(-1, -2)))
-chooseFigureMoves(Figure(Pawn,Black),Field(4,5),false).map{case (a,b) => (a.take(4).force,b.take(4).force) } // List((LazyList(0),LazyList(-1)))
-chooseFigureMoves(Figure(Pawn,White),Field(4,2),true).map{case (a,b) => (a.take(4).force,b.take(4).force) } // List((LazyList(-1),LazyList(1)), (LazyList(1),LazyList(1)))
-chooseFigureMoves(Figure(Pawn,Black),Field(4,7),true).map{case (a,b) => (a.take(4).force,b.take(4).force) } // List((LazyList(-1),LazyList(-1)), (LazyList(1),LazyList(-1)))
-relativeField(Field(1,2))((1,1)) // b3
-relativeField(Field(1,2))((0,2)) // a4
-relativeFields(Field(2,2))((LazyList(0,0),LazyList(1,2))).force // LazyList(b3, b4)
-figureMoves(Figure(Rook,White),Field(3,4),false).map(_.force) // List(LazyList(d4, e4, f4, g4, h4), LazyList(b4, a4), LazyList(c5, c6, c7, c8), LazyList(c3, c2, c1))
-figureMoves(Figure(Pawn,White),Field(2,2),false).map(_.force) // List(LazyList(b3, b4))
-figureMoves(Figure(Pawn,White),Field(2,2),true).map(_.force) // List(LazyList(a3), LazyList(c3))
-figureMoves(Figure(Pawn,White),Field(1,2),true).map(_.force) // List(LazyList(), LazyList(b3))
-:q
-*/

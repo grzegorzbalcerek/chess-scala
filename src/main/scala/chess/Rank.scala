@@ -65,37 +65,3 @@ class Rank(game: Game) {
     game.colorRank(color)-game.colorRank(color.other)
 
 }
-
-/*
-scaladoc chess\*.scala
-scalac chess\*.scala
-scala
-import chess._, Rank._
-figureRank(Figure(Queen,White)) // 900
-figureRank(Figure(Knight,Black)) // 300
-fieldRank(Field(1,1)) // 2
-fieldRank(Field(2,5)) // 16
-fieldRank(Field(4,4)) // 32
-val g1 = GameStart.move(Field(1,2),Field(1,3),None).get
-val g2 = g1.move(Field(1,7),Field(1,6),None).get
-figureDefendingOtherFiguresRank(g2,Field(2,1),Figure(Knight,White)) // 1
-val g1 = GameStart.move(Field(7,2),Field(7,4),None).get
-val g2 = g1.move(Field(5,7),Field(5,6),None).get
-val g3 = g2.move(Field(6,2),Field(6,4),None).get
-val g4 = g3.move(Field(4,8),Field(8,4),None).get
-checkRank(GameStart,White) // 0
-checkRank(g4,White) // 0
-checkRank(g4,Black) // 50
-colorRank(GameStart,White) // 3928
-colorRank(g1,White) // 3928
-colorRank(g2,White) // 3935
-colorRank(g3,White) // 3940
-colorRank(g4,White) // 3947
-rank(GameStart,White) // 8
-rank(g1,White) // 0
-rank(g2,White) // 7
-rank(g3,White) // 5
-rank(g4,White) // -32
-rank(GameStart,Black) // -8
-:q
-*/

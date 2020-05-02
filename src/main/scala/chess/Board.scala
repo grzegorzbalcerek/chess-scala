@@ -42,12 +42,15 @@ object Board {
     Field(7,8) -> Figure(Knight,Black),
     Field(8,8) -> Figure(Rook,Black))
 
+  val showBoardU = showBoard(_.figureSymbol)_
+  val showBoardA = showBoard(_.toString)_
+
   /**
-    * Shows the board.
-    */
-  def showBoard(board: Board): String = {
+   * Shows the board.
+   */
+  private def showBoard(show: Figure => String)(board: Board): String = {
     def rowToString(row: Int) = 1.to(8).map(col=>
-      board.get(Field(col,row)).map(_.toString).getOrElse(".")).mkString
+      board.get(Field(col,row)).map(show).getOrElse(".")).mkString
     " abcdefgh" + lineSeparator + 8.to(1,-1).map(row =>
     row.toString + rowToString(row) + row.toString + lineSeparator).mkString + " abcdefgh"
   }
@@ -73,18 +76,3 @@ object Board {
       }
   }
 }
-
-/*
-scaladoc chess\*.scala
-scalac chess\*.scala
-scala
-import chess._, Board._
-startingBoard
-showBoard(startingBoard)
-showBoard(updateBoard(startingBoard,RegularMove(Field(2,2),Field(2,3))))
-showBoard(updateBoard(startingBoard,RegularMove(Field(3,3),Field(2,3))))
-showBoard(updateBoard(startingBoard,PromotionMove(Field(2,2),Field(2,8),Figure(Queen,White))))
-showBoard(updateBoard(startingBoard,EnPassantMove(Field(2,2),Field(3,3),Field(3,7))))
-showBoard(updateBoard(startingBoard,CastlingMove(Field(5,1),Field(3,1),Field(1,1),Field(4,1))))
-:q
-*/

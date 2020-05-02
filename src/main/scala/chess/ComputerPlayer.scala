@@ -45,24 +45,3 @@ class ComputerPlayer(game: Game) {
   def makeMove = chooseRandomly(moves)
 
 }
-
-/*
-scaladoc chess\*.scala
-scalac chess\*.scala
-scala
-import chess._, ComputerPlayer._
-val g1 = GameStart.move(Field(7,2),Field(7,4),None).get
-val g2 = g1.move(Field(5,7),Field(5,6),None).get
-val g3 = g2.move(Field(6,2),Field(6,4),None).get
-val g4 = g3.move(Field(4,8),Field(8,4),None).get
-GameStart.moves.size // 2
-g1.moves.size // 2
-g2.moves.size // 2
-g3.moves.size // 1
-g4.moves.size // 0
-val g1 = GameStart.makeMove.get
-val g2 = g1.makeMove.get
-val g3 = g2.makeMove.get
-val g4 = g3.makeMove.get
-:q
-*/

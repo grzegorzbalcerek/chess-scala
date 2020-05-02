@@ -54,16 +54,3 @@ case class Figure(figureType: FigureType, figureColor: Color) {
 
 }
 
-/*
-scaladoc chess\*.scala
-scalac chess\*.scala
-scala
-import chess._
-Figure(King, White) // k
-Figure(King, Black) // K
-Figure(Knight, White) // n
-Figure(King, White).figureSymbol
-Figure(King, Black).figureSymbol
-Figure(Knight, White).figureSymbol
-:q
-*/

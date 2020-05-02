@@ -28,15 +28,3 @@ case object Black extends Color {
   def other = White
   def firstRow = 8
 }
-
-/*
-scaladoc chess\*.scala
-scalac chess\*.scala
-scala
-import chess._
-White.other // Black
-Black.other // White
-White.firstRow // 1
-White.firstRow // 2
-:q
-*/

@@ -205,7 +205,7 @@ object GameStart extends Game {
   override val color = White
   override val hist: List[Game] = Nil
   override val board = startingBoard
-  override def toString = "White to begin:\n"+showBoard(board)
+  override def toString = "White to begin:\n"+showBoardU(board)
 }
 
 final class OngoingGame(
@@ -215,37 +215,5 @@ final class OngoingGame(
   val lastMove: Move
 ) extends Game {
   override def toString = "Last move: "+color.other+" "+
-    lastMove.from+" to "+lastMove.to+lineSeparator+showBoard(board)
+    lastMove.from+" to "+lastMove.to+lineSeparator+showBoardU(board)
 }
-
-/*
-scaladoc chess\*.scala
-scalac chess\*.scala
-scala
-import chess._, FigureMoves._
-GameStart
-GameStart.isFieldEmpty(Field(2,2)) // false
-GameStart.isFieldEmpty(Field(2,3)) // true
-GameStart.freeDestinations(figureMoves(Figure(Rook,White),Field(3,4),false)) // List(d4, e4, f4, g4, h4, b4, a4, c5, c6, c3)
-GameStart.freeDestinations(figureMoves(Figure(Bishop,White),Field(3,4),false)) // List(d5, e6, b5, a6, d3, b3)
-GameStart.captureDestinations(figureMoves(Figure(Rook,White),Field(3,4),false)) // List(c7)
-GameStart.captureDestinations(figureMoves(Figure(Bishop,White),Field(3,4),false)) // List(f7)
-GameStart.isOtherKingUnderCheck // false
-GameStart.isKingUnderCheck // false
-GameStart.isGameFinished // false
-GameStart.winner // None
-GameStart.nextGames.size // 20
-GameStart.validGames.size // 20
-GameStart.move(Field(1,2),Field(1,5),None) // None
-val g1 = GameStart.move(Field(7,2),Field(7,4),None).get
-val g2 = g1.move(Field(5,7),Field(5,6),None).get
-val g3 = g2.move(Field(6,2),Field(6,4),None).get
-val g4 = g3.move(Field(4,8),Field(8,4),None).get
-g4.isOtherKingUnderCheck // false
-g4.isKingUnderCheck // true
-g4.isGameFinished // true
-g4.winner // Some(Black)
-g4.nextGames.size // 20
-g4.validGames.size // 0
-:q
-*/
