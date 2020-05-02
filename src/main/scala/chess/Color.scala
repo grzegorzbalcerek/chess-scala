@@ -7,11 +7,11 @@ package chess
 abstract sealed class Color {
 
   /**
-    * The `other` method returns the opposite color.
-    */
+   * The `other` method returns the opposite color.
+   */
   def other: Color
 
-  /**
+  /*
     * The `firstRow` method returns the coordinate of the first row
     * from the point of view of a player who plays the given color.
     */
